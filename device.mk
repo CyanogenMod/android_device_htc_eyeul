@@ -18,10 +18,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
-$(call inherit-product-if-exists, vendor/htc/m8-common/m8-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/htc/eyeul/eyeul-vendor.mk)
 
 # overlays
-DEVICE_PACKAGE_OVERLAYS += device/htc/m8/overlay
+DEVICE_PACKAGE_OVERLAYS += device/htc/eyeul/overlay
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
@@ -41,7 +41,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     ueventd.qcom.rc
 
-# Qcom init scripts for /etc
+# Bluetooth
 PRODUCT_PACKAGES += \
    init.qcom.bt.bluedroid.sh \
    init.qcom.bt.sh
@@ -52,7 +52,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-    frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
@@ -65,14 +64,13 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.compass.xml \
-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
-    device/htc/m8/configs/com.htc.software.market.xml:system/etc/permissions/com.htc.software.market.xml
+    device/htc/eyeul/configs/com.htc.software.market.xml:system/etc/permissions/com.htc.software.market.xml
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -165,9 +163,9 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 ifeq ($(TARGET_BUILD_VARIANT),user)
-    NFCEE_ACCESS_PATH := device/htc/m8/configs/nfcee_access.xml
+    NFCEE_ACCESS_PATH := device/htc/eyeul/configs/nfcee_access.xml
 else
-    NFCEE_ACCESS_PATH := device/htc/m8/configs/nfcee_access_debug.xml
+    NFCEE_ACCESS_PATH := device/htc/eyeul/configs/nfcee_access_debug.xml
 endif
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
@@ -197,8 +195,7 @@ PRODUCT_PACKAGES += \
     qcmediaplayer
 
 PRODUCT_BOOT_JARS += \
-    qcmediaplayer \
-    htcirlibs
+    qcmediaplayer
 
 # Power
 PRODUCT_PACKAGES += \
@@ -212,15 +209,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
-# Variant linking script
-PRODUCT_COPY_FILES += \
-    device/htc/m8/releasetools/makelinks.sh:install/bin/makelinks.sh
-
 # Wifi firmware
 PRODUCT_PACKAGES += \
     wcnss_service
 
-# WiFi
+# WiFi config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \

@@ -1,6 +1,4 @@
-# system.prop for m8
-
-ro.product.model=One M8
+# system.prop for eyeul
 
 # RIL
 rild.libargs=-d /dev/smd0
@@ -28,6 +26,7 @@ persist.rild.nitz_short_ons_1=
 persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 DEVICE_PROVISIONED=1
+ro.telephony.default_network=9
 
 # QCOM
 com.qc.hardware=true
@@ -54,7 +53,7 @@ media.aac_51_output_enabled=true
 mm.enable.smoothstreaming=true
 
 # Camera
-persist.camera.maxopen=3
+camera2.portability.force_api=1
 
 # GPS
 persist.gps.qc_nlp_in_use=0

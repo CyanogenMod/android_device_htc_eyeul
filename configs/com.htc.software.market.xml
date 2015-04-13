@@ -20,10 +20,7 @@
 <permissions>
     <feature name="com.htc.software.HTC" />
     <feature name="com.htc.software.Sense6.0" />
-    <feature name="com.htc.software.M8WL" />
-    <feature name="com.htc.software.Verizon" />
-    <feature name="com.htc.software.WWE" />
-    <feature name="com.htc.software.PlayGroup1" />
+    <feature name="com.htc.software.EyeULATT" />
     <feature name="com.htc.software.hdk" />
     <feature name="com.htc.software.hdk2" />
 </permissions>

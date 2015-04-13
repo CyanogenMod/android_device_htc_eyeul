@@ -28,8 +28,7 @@
 # 0P6B20000 - Verizon
 # 0P6B70000 - Sprint
 
-TARGET_OTA_ASSERT_DEVICE := htc_m8,htc_m8whl,htc_m8wl,m8,m8wl,m8wlv,m8vzw,m8whl,m8spr
-TARGET_BOARD_INFO_FILE ?= device/htc/m8/board-info.txt
+TARGET_OTA_ASSERT_DEVICE := htc_eyeul_att, eyeul
 
 BOARD_VENDOR := htc
 
@@ -54,13 +53,13 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 COMMON_GLOBAL_CFLAGS += -DHTCLOG
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 zcache androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 zcache androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000
-BOARD_CUSTOM_BOOTIMG_MK := device/htc/m8/mkbootimg.mk
-TARGET_KERNEL_CONFIG := cm_m8_defconfig
+BOARD_CUSTOM_BOOTIMG_MK := device/htc/eyeul/mkbootimg.mk
+TARGET_KERNEL_CONFIG := cm_eyeul_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/msm8974
 
 # QCOM hardware
@@ -68,7 +67,7 @@ BOARD_USES_QCOM_HARDWARE := true
 
 # Audio
 AUDIO_FEATURE_DISABLED_MULTI_VOICE_SESSIONS := true
-# BOARD_AUDIO_AMPLIFIER := device/htc/m8/libaudioamp
+# BOARD_AUDIO_AMPLIFIER := device/htc/eyeul/libaudioamp
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
 AUDIO_FEATURE_ENABLED_FM := true
@@ -79,7 +78,7 @@ AUDIO_FEATURE_ENABLED_LOW_LATENCY_CAPTURE := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/m8/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/eyeul/bluetooth
 
 # Camera
 COMMON_GLOBAL_CFLAGS += -DHTC_CAMERA_HARDWARE
@@ -93,7 +92,7 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 EXTENDED_FONT_FOOTPRINT := true
 
 # Graphics
-BOARD_EGL_CFG := device/htc/m8/configs/egl.cfg
+BOARD_EGL_CFG := device/htc/eyeul/configs/egl.cfg
 TARGET_USES_ION := true
 TARGET_USES_OVERLAY := true
 USE_OPENGL_RENDERER := true
@@ -103,7 +102,7 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
 # Includes
-TARGET_SPECIFIC_HEADER_PATH := device/htc/m8/include
+TARGET_SPECIFIC_HEADER_PATH := device/htc/eyeul/include
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -143,8 +142,8 @@ TARGET_FORCE_CPU_UPLOAD := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
 BOARD_RECOVERY_BLDRMSG_OFFSET := 2048
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 25165824
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 13153337344
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4194304000
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 9961472000
 BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_RECOVERY_DEVICE_MODULES += chargeled
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -157,21 +156,19 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 BOARD_USES_MMCUTILS := true
-TARGET_RECOVERY_FSTAB := device/htc/m8/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/htc/eyeul/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/htc/m8/sepolicy
+BOARD_SEPOLICY_DIRS += device/htc/eyeul/sepolicy
 
 BOARD_SEPOLICY_UNION += \
-    cir_fw_update.te \
     device.te \
     file_contexts \
     file.te \
     hcheck.te \
     init.te \
-    kcal_dev.te \
     kernel.te \
     mediaserver.te \
     mm-qcamerad.te \
@@ -181,7 +178,6 @@ BOARD_SEPOLICY_UNION += \
     recovery.te \
     radio.te \
     rmt_storage.te \
-    system_app.te \
     system_server.te \
     tap2wake_dev.te \
     thermal-engine.te \
@@ -189,13 +185,8 @@ BOARD_SEPOLICY_UNION += \
     vibe_dev.te \
     vold.te
 
-# Vendor Init
-TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_m8
-TARGET_LIBINIT_DEFINES_FILE := device/htc/m8/init/init_m8.c
-
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/htc/m8/releasetools
+# TARGET_RELEASETOOLS_EXTENSIONS := device/htc/eyeul/releasetools
 
 # Hardware
-BOARD_HARDWARE_CLASS := device/htc/m8/cmhw
+BOARD_HARDWARE_CLASS := device/htc/eyeul/cmhw

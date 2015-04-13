@@ -1,32 +1,32 @@
-# Device configuration for HTC One (M8)
+# Device configuration for HTC Desire Eye (eyeul)
 
 ## Spec Sheet
 
 | Feature                 | Specification                     |
 | :---------------------- | :-------------------------------- |
 | CPU                     | Quad-core 2.3 GHz Krait 400       |
-| Chipset                 | Qualcomm MSM8974AB Snapdragon 801 |
+| Chipset                 | Qualcomm MSM8974AA Snapdragon 801 |
 | GPU                     | Adreno 330                        |
 | Memory                  | 2GB RAM                           |
-| Shipped Android Version | 4.4.2                             |
-| Storage                 | 16/32 GB                          |
+| Shipped Android Version | 4.4.4                             |
+| Storage                 | 16 GB                             |
 | MicroSD                 | Up to 128GB                       |
-| Battery                 | 2600 mAh                          |
-| Dimensions              | 146.4 x 70.6 x 9.4 mm             |
+| Battery                 | 2400 mAh                          |
+| Dimensions              | 151.7 x 73.8 x 8.5 mm			  |
 | Display                 | 1080 x 1920 pixels, Super LCD3    |
-| Camera                  | Dual 4 MP, 2688х1520 pixels       |
-| Release Date            | March 2014                        |
+| Camera                  | Dual 13 MP					      |
+| Release Date            | November 2014                     |
 
 
 ## Device Picture
 
-![HTC One M8](http://wiki.cyanogenmod.org/images/thumb/5/55/M8.png/292px-M8.png "HTC One M8")
+![HTC Desire Eye](http://www.htc.com/managed-assets/shared/desktop/smartphones/htc-desire-eye/htc-desire-eye-global-sketchfab-white.png "HTC Desire Eye")
 
 ## Copyright
 
 ```
 #
-# Copyright (C) 2014 The CyanogenMod Project
+# Copyright (C) 2015 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
