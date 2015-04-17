@@ -183,7 +183,8 @@ BOARD_SEPOLICY_UNION += \
     thermal-engine.te \
     ueventd.te \
     vibe_dev.te \
-    vold.te
+    vold.te \
+    wpa.te
 
 # Releasetools
 # TARGET_RELEASETOOLS_EXTENSIONS := device/htc/eyeul/releasetools
