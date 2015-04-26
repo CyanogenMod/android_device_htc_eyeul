@@ -21,12 +21,9 @@
 #
 
 # Model Ids
-# 0P6B10000 - International
-# 0P6B12000 - AT&T/Dev Edition
-# 0P6B13000 - T-Mobile
-# 0P6B16000 - Telus/Rogers (Canada)
-# 0P6B20000 - Verizon
-# 0P6B70000 - Sprint
+# 0PFH10000 - AT&T/Dev Edition
+# 0PFH11000 - Europe/International
+# 0PFH20000 - Asia Taiwan
 
 TARGET_OTA_ASSERT_DEVICE := htc_eyeul_att, eyeul
 
