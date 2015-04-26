@@ -1,3 +1,4 @@
+-app/EasyAccessService/EasyAccessService.apk:app/EasyAccessService.apk
 bin/adsprpcd
 bin/ATFWD-daemon
 bin/hcheck
@@ -294,12 +295,7 @@ vendor/lib/libmmcamera_hdr_gb_lib.so
 vendor/lib/libmmcamera_hdr_lib.so
 vendor/lib/libmmcamera_imglib.so
 vendor/lib/libmmcamera_ofilm_oty5f03_eeprom.so
-# vendor/lib/libmmcamera_ov2722.so
-# vendor/lib/libmmcamera_ov2722_subcam.so
-# vendor/lib/libmmcamera_ov4688.so
-# vendor/lib/libmmcamera_ov5648_oty5f03.so
 vendor/lib/libmmcamera_ov8865_q8v18a.so
-# vendor/lib/libmmcamera_s5k5e.so
 vendor/lib/libmmcamera_SKUAA_ST_gc0339.so
 vendor/lib/libmmcamera_skuab_shinetech_gc0339.so
 vendor/lib/libmmcamera_SKUAB_ST_s5k4e1.so
