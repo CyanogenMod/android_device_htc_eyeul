@@ -23,4 +23,4 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 PRODUCT_NAME := cm_eyeul
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT="htc/cingular_us/htc_eyeul_att:4.4.4/KTU84P/396037.7:user/release-keys" PRIVATE_BUILD_DESC="1.15.502.7 CL396037 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT="htc/htc_europe/htc_eyeul:5.0.2/LRX22G/504177.1:user/release-keys" PRIVATE_BUILD_DESC="2.19.401.1 CL504177 release-keys"
