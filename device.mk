@@ -166,13 +166,10 @@ PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
 PRODUCT_PACKAGES += \
-    nfc.msm8974 \
-    libnfc \
-    libnfc_ndef \
-    libnfc_jni \
-    Nfc \
+    NfcNci \
     Tag \
-    com.android.nfc_extras
+    com.android.nfc_extras \
+    nfc_nci.pn54x.default
 
 # OMX
 PRODUCT_PACKAGES += \
