@@ -164,6 +164,10 @@ lib/libmmjpeg_interface.so
 lib/libposteffect.so
 lib/libqomx_core.so
 lib/libtuning_aec.so
+lib/libFaceRetrieve.so
+lib/libHtcVteEngine.so
+lib/libhtcsecure.so
+lib/libc2dcolorconvertgpu.so
 lib/libtuning_aec_imx214_784m_hdr.so
 lib/libtuning_aec_imx214_784m_hdr_16_9.so
 lib/libtuning_aec_imx214_784m_night.so
