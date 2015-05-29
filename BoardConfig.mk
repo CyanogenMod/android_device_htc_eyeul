@@ -25,7 +25,7 @@
 # 0PFH11000 - Europe/International
 # 0PFH20000 - Asia Taiwan
 
-TARGET_OTA_ASSERT_DEVICE := htc_eyeul_att,eyeul
+TARGET_OTA_ASSERT_DEVICE := eyeul
 
 BOARD_VENDOR := htc
 
