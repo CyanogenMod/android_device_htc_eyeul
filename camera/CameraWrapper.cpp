@@ -21,8 +21,7 @@
 *
 */
 
-#define LOG_NDEBUG 0
-#define LOG_PARAMETERS
+//#define LOG_NDEBUG 0
 
 #define LOG_TAG "CameraWrapper"
 #include <cutils/log.h>
@@ -103,7 +102,7 @@ static char *camera_fixup_getparams(int id, const char *settings)
     android::CameraParameters params;
     params.unflatten(android::String8(settings));
 
-#ifdef LOG_PARAMETERS
+#if !LOG_NDEBUG
     ALOGV("%s: original parameters:", __FUNCTION__);
     params.dump();
 #endif
@@ -133,7 +132,7 @@ static char *camera_fixup_getparams(int id, const char *settings)
             break;
     }
 
-#ifdef LOG_PARAMETERS
+#if !LOG_NDEBUG
     ALOGV("%s: fixed parameters:", __FUNCTION__);
     params.dump();
 #endif
@@ -151,7 +150,7 @@ static char *camera_fixup_setparams(int id, const char *settings)
     android::CameraParameters params;
     params.unflatten(android::String8(settings));
 
-#ifdef LOG_PARAMETERS
+#if !LOG_NDEBUG
     ALOGV("%s: original parameters:", __FUNCTION__);
     params.dump();
 #endif
@@ -179,7 +178,7 @@ static char *camera_fixup_setparams(int id, const char *settings)
         params.set(android::CameraParameters::KEY_FOCUS_MODE, "infinity");
     }
 
-#ifdef LOG_PARAMETERS
+#if !LOG_NDEBUG
     ALOGV("%s: fixed parameters:", __FUNCTION__);
     params.dump();
 #endif
