@@ -179,8 +179,5 @@ BOARD_SEPOLICY_UNION += \
     vold.te \
     wpa.te
 
-# Releasetools
-# TARGET_RELEASETOOLS_EXTENSIONS := device/htc/eyeul/releasetools
-
 # Hardware
 BOARD_HARDWARE_CLASS := device/htc/eyeul/cmhw
