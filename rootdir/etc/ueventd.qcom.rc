@@ -50,6 +50,7 @@
 #permissions for CSVT
 /dev/smd11                0660   radio      radio
 
+/dev/radio0               0640   system     system
 /dev/rfcomm0              0660   bluetooth  bluetooth
 /dev/smdcntl0             0640   radio      radio
 /dev/smdcntl1             0640   radio      radio
@@ -147,7 +148,6 @@
 /dev/msm_preproc_ctl      0660   system     audio
 /dev/msm_rtac             0660   system     audio
 /dev/msm_voicememo        0660   system     audio
-/dev/radio0               0640   system     system
 /dev/adsp/*               0660   system     audio
 /dev/snd/*                0660   system     audio
 /dev/pmem_adsp*           0660   system     audio
