@@ -17,6 +17,8 @@
 #ifndef _TFA9887_H_
 #define _TFA9887_H_
 
+#include <stdint.h>
+
 #define TFA9887_DEVICE "/dev/tfa9887"
 #define TFA9887L_DEVICE "/dev/tfa9887l"
 
@@ -33,18 +35,22 @@
 #define MAX_PATCH_SIZE 3072
 #define MAX_PARAM_SIZE 768
 
+#define PATCH_HEADER_LENGTH 6
+
+typedef struct uint24 {
+    uint8_t bytes[3];
+} uint24_t;
+
+#define MAX_EQ_ITEM_SIZE (sizeof(uint24_t))
+#define MAX_EQ_LINE_SIZE 6
+#define MAX_EQ_LINES 10
+#define MAX_EQ_SIZE (MAX_EQ_ITEM_SIZE * MAX_EQ_LINE_SIZE * MAX_EQ_LINES)
+
 #define CONFIG_TFA9887 "/system/etc/tfa/tfa9895.config"
 #define PATCH_TFA9887 "/system/etc/tfa/tfa9895.patch"
 
 #define SPKR_R "/system/etc/tfa/tfa9895.speaker"
 #define SPKR_L "/system/etc/tfa/tfa9895_l.speaker"
-
-#define CONFIG_PLAYBACK_R "/system/etc/tfa/playbackwoofer.preset"
-#define CONFIG_PLAYBACK_L "/system/etc/tfa/playbackwoofer_l.preset"
-#define CONFIG_RING_R "/system/etc/tfa/ring.config"
-#define CONFIG_RING_L "/system/etc/tfa/ring_l.config"
-#define CONFIG_VOICE_R "/system/etc/tfa/voice.config"
-#define CONFIG_VOICE_L "/system/etc/tfa/voice_l.config"
 
 #define PRESET_PLAYBACK_R "/system/etc/tfa/playback.preset"
 #define PRESET_PLAYBACK_L "/system/etc/tfa/playback_l.preset"
@@ -53,15 +59,15 @@
 #define PRESET_VOICE_R "/system/etc/tfa/voice.preset"
 #define PRESET_VOICE_L "/system/etc/tfa/voice_l.preset"
 
-#define EQ_PLAYBACK_R "/system/etc/tfa/playbackwoofer.eq"
-#define EQ_PLAYBACK_L "/system/etc/tfa/playbackwoofer_l.eq"
+#define EQ_PLAYBACK_R "/system/etc/tfa/playback.eq"
+#define EQ_PLAYBACK_L "/system/etc/tfa/playback_l.eq"
 #define EQ_RING_R "/system/etc/tfa/ring.eq"
 #define EQ_RING_L "/system/etc/tfa/ring_l.eq"
 #define EQ_VOICE_R "/system/etc/tfa/voice.eq"
 #define EQ_VOICE_L "/system/etc/tfa/voice_l.eq"
 
-#define DRC_PLAYBACK_R "/system/etc/tfa/playbackwoofer.drc"
-#define DRC_PLAYBACK_L "/system/etc/tfa/playbackwoofer_l.drc"
+#define DRC_PLAYBACK_R "/system/etc/tfa/playback.drc"
+#define DRC_PLAYBACK_L "/system/etc/tfa/playback_l.drc"
 #define DRC_RING_R "/system/etc/tfa/ring.drc"
 #define DRC_RING_L "/system/etc/tfa/ring_l.drc"
 #define DRC_VOICE_R "/system/etc/tfa/voice.drc"
