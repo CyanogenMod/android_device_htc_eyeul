@@ -36,10 +36,18 @@ PRODUCT_PACKAGES += Dotcase
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.qcom \
     init.qcom.rc \
     init.qcom.usb.rc \
     ueventd.qcom.rc
+
+ifeq ($(HOST_OS),linux)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:root/fstab.qcom
+else
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/nof2fsfstab.qcom:root/fstab.qcom
+endif
+
 
 # Bluetooth
 PRODUCT_PACKAGES += \
