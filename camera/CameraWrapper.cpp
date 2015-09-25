@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012, The CyanogenMod Project
+ * Copyright (C) 2012-2015 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,7 +95,7 @@ static int check_vendor_module()
     return rv;
 }
 
-static char *camera_fixup_getparams(const char *settings)
+static char *camera_fixup_getparams(int id, const char *settings)
 {
     int rotation = 0;
 
@@ -422,7 +422,7 @@ static char *camera_get_parameters(struct camera_device *device)
 
     char *params = VENDOR_CALL(device, get_parameters);
 
-    char *tmp = camera_fixup_getparams(params);
+    char *tmp = camera_fixup_getparams(CAMERA_ID(device), params);
     VENDOR_CALL(device, put_parameters, params);
     params = tmp;
 
