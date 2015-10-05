@@ -1,4 +1,4 @@
--app/EasyAccessService/EasyAccessService.apk:app/EasyAccessService.apk
+# -app/EasyAccessService/EasyAccessService.apk:app/EasyAccessService.apk
 bin/adsprpcd
 bin/ATFWD-daemon
 bin/hcheck
@@ -292,7 +292,6 @@ vendor/lib/liboemcamera.so
 vendor/lib/liboemcrypto.so
 vendor/lib/libOpenCL.so
 vendor/lib/libOpenVG.so
-vendor/lib/libqc-opt.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libQSEEComAPI.so
@@ -305,13 +304,13 @@ vendor/lib/libscve.so
 vendor/lib/libscve_stub.so
 vendor/lib/libssd.so
 vendor/lib/libthermalclient.so
-# lib/libtime_genoff.so:vendor/lib/libtime_genoff.so
+lib/libtime_genoff.so:vendor/lib/libtime_genoff.so
 vendor/lib/libthermalioctl.so
 vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
-# vendor/lib/libWVphoneAPI.so
+vendor/lib/libWVphoneAPI.so
 vendor/lib/libWVStreamControlAPI_L1.so
-# vendor/lib/mediadrm/libdrmclearkeyplugin.so
+vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
