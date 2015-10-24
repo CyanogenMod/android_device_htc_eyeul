@@ -33,7 +33,7 @@
 # Model Ids
 # 0PFH10000 - AT&T/Dev Edition
 # 0PFH11000 - Europe/International
-# 0PFH20000 - Asia Taiwan
+# 0PFH20000 - Asia/Taiwan
 
 TARGET_OTA_ASSERT_DEVICE := eyeul
 
