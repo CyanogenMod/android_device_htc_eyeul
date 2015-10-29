@@ -38,7 +38,6 @@
 TARGET_OTA_ASSERT_DEVICE := eyeul
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := device/htc/eyeul/mkbootimg.mk
 TARGET_KERNEL_CONFIG := cm_eyeul_defconfig
 
 # Bluetooth
