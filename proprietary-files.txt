@@ -318,3 +318,14 @@ vendor/lib/rfsa/adsp/libfastcvadsp.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libqcreverb.so
+
+# WLAN firmware
+vendor/firmware/wcnss.b00
+vendor/firmware/wcnss.b01
+vendor/firmware/wcnss.b02
+vendor/firmware/wcnss.b04
+vendor/firmware/wcnss.b06
+vendor/firmware/wcnss.b07
+vendor/firmware/wcnss.b08
+vendor/firmware/wcnss.b09
+vendor/firmware/wcnss.mdt
