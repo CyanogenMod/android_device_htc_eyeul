@@ -27,7 +27,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     camera.msm8974
 
+# Init
+PRODUCT_PACKAGES += \
+    init.target.rc
+
 # NFC
 PRODUCT_PACKAGES += \
     NfcNci \
     nfc_nci.pn54x.default
+
+# SSL Compat
+PRODUCT_PACKAGES += \
+    libboringssl-compat
