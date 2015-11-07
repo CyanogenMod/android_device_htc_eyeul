@@ -1,0 +1,2 @@
+on boot
+    export LD_PRELOAD /system/lib/libhtc_symbols.so:/system/lib/libboringssl-compat.so
