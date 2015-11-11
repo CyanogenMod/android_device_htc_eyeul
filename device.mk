@@ -23,10 +23,6 @@ $(call inherit-product, device/htc/msm8974-common/msm8974-common.mk)
 PRODUCT_COPY_FILES += \
     device/htc/eyeul/configs/com.htc.software.market.xml:system/etc/permissions/com.htc.software.market.xml
 
-# Camera
-PRODUCT_PACKAGES += \
-    camera.msm8974
-
 # Init
 PRODUCT_PACKAGES += \
     init.target.rc
