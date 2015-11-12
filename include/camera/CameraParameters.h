@@ -110,6 +110,9 @@ public:
      */
     void getSupportedPreviewFormats(Vector<int>& formats) const;
 
+    // Returns true if no keys are present
+    bool isEmpty() const;
+
     // Parameter keys to communicate between camera application and driver.
     // The access (read/write, read only, or write only) is viewed from the
     // perspective of applications, not driver.
@@ -686,13 +689,61 @@ public:
     static const char LIGHTFX_HDR[];
 
     /* HTC parameters */
+    static const char KEY_TIME_CONS_POST_PROCESSING[];
+    static const char KEY_OIS_MODE[];
+    static const char KEY_APP_OIS_SETTING[];
+    static const char KEY_OIS_SUPPORT[];
     static const char KEY_CONTIBURST_TYPE[];
+    static const char KEY_CAPTURE_MODE[];
+    static const char CAPTURE_MODE_NORMAL[];
+    static const char CAPTURE_MODE_CONTI_ZOE[];
+    static const char CAPTURE_MODE_CONTI_BURST[];
+    static const char CAPTURE_MODE_CONTI_BURST_ONE_SHOT[];
+    static const char CAPTURE_MODE_HDR[];
+    static const char CAPTURE_MODE_PANORAMA[];
+    static const char CAPTURE_MODE_ZOE[];
+    static const char CAPTURE_MODE_EIS[];
     static const char KEY_CONTI_BURST_STATE[];
+    static const char KEY_SUPPORTED_CAPTURE_MODES[];
+    static const char KEY_MIN_CONTRAST[];
+    static const char KEY_DEF_CONTRAST[];
+    static const char KEY_MIN_SHARPNESS[];
+    static const char KEY_DEF_SHARPNESS[];
+    static const char KEY_MIN_SATURATION[];
+    static const char KEY_DEF_SATURATION[];
+    static const char KEY_SINGLE_ISP_OUTPUT_ENABLED[];
+    static const char POST_PROCESSING_ENABLE[];
+    static const char POST_PROCESSING_BYPASS[];
+    static const char POST_PROCESSING_DELAY[];
+    static const char SCENE_MODE_OFF[];
     static const char SCENE_MODE_TEXT[];
+    static const char BURST_MODE_LIMIT20[];
+    static const char BURST_MODE_UNLIMITED[];
+    static const char OIS_MODE_OFF[];
+    static const char OIS_MODE_ON[];
     static const char CONTI_BURST_CAPTURING[];
     static const char CONTI_BURST_CAPTURE_DONE[];
+    static const char APP_OIS_SETTING_FALSE[];
+    static const char APP_OIS_SETTING_TRUE[];
+    static const char KEY_GPU_EFFECT[];
+    static const char KEY_GPU_EFFECT_PARAM_0[];
+    static const char KEY_GPU_EFFECT_PARAM_1[];
+    static const char KEY_GPU_EFFECT_PARAM_2[];
+    static const char KEY_GPU_EFFECT_PARAM_3[];
     static const char KEY_FORCE_USE_AUDIO_ENABLED[];
+    static const char KEY_ZSL[];
+    static const char KEY_CAMERA_MODE[];
     static const char KEY_SMILEINFO_BYFACE_SUPPORTED[];
+    static const char ZSL_OFF[];
+    void getRawSize(int *magic, int *sauce) const;
+    void getBrightnessLumaTargetSet(int *magic, int *sauce) const;
+    void setBrightnessLumaTargetSet(int brightness, int luma);
+    void setZsl(const char *sauce);
+    const char *getZsl() const;
+
+#ifdef CAMERA_PARAMETERS_EXTRA_H
+CAMERA_PARAMETERS_EXTRA_H
+#endif
 
     /**
      * Returns the the supported preview formats as an enum given in graphics.h
