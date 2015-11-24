@@ -1,9 +1,0 @@
-# RIL
-rild.libargs=-d /dev/smd0
-ro.ril.hsdpa.category=14
-ro.ril.hsxpa=4
-ro.ril.disable.cpc=1
-ro.telephony.default_network=9
-
-# Camera
-camera2.portability.force_api=1
