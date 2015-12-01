@@ -1,6 +1,5 @@
 on init
-    export LD_PRELOAD /system/lib/libhtc_symbols.so:/system/lib/libboringssl-compat.so
-
+    export LD_PRELOAD /system/lib/libboringssl-compat.so
 
 on post-fs-data
 service loggy /system/bin/sh  /loggy.sh
