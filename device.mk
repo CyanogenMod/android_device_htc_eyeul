@@ -19,19 +19,5 @@ $(call inherit-product-if-exists, vendor/htc/eyeul/eyeul-vendor.mk)
 # Inherit from msm8974-common
 $(call inherit-product, device/htc/msm8974-common/msm8974-common.mk)
 
-# Permissions
-PRODUCT_COPY_FILES += \
-    device/htc/eyeul/configs/com.htc.software.market.xml:system/etc/permissions/com.htc.software.market.xml
-
-# Init
-PRODUCT_PACKAGES += \
-    init.target.rc
-
-# NFC
-PRODUCT_PACKAGES += \
-    NfcNci \
-    nfc_nci.pn54x.default
-
-# SSL Compat
-PRODUCT_PACKAGES += \
-    libboringssl-compat
+# local overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
